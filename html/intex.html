@@ -1,69 +1,78 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Assignment 6</title>
-    <!-- jQuery -->
+    <!--BootStrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--JQuery-->
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-    <!-- Bootstrap 4 -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- FontAwesome -->
+    <!--OpenLayers: go to quickstart-->
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!-- OpenLayers -->
-    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-     
-
+    <link rel="stylesheet" href="css/style.css">
+    <title>TripWagonPlatz</title>
 </head>
 
 <body>
     <div class="container mt-5">
-    <!-- Booking -->
-    <!--section.row.searchbar-->
-    <section class="row searchbar border bg-warning">
-        <div class="col border " id="search">Search Bar</div>
-    </section>
-    <section class="row booking">
-        <div class="col border" id="ckeckin">Check-in</div>
-        <div class="col border" id="checkout">Check-out</div>
-        <div class="col border" id="roomtypes">Room Types</div>
+        <!-- SUCHENBAR -->
+        <section class="row searchbar bg-dark pt-3 rounded">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white border-0"><i class="fas fa-search text-black-50"></i></span>
+                    </div>
+                    <input type="text" class="form-control border-0 shadow-none" aria-label="Location">
+                    <div class="input-group-append">
+                        <button class="input-group-text bg-info text-white px-5 border-0">Click me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Features -->
-    </section>
-    <section class="row features">
-        <!-- .col-2{feature} -->
-        <div class="col-4 border" id="price">Price Range</div>
-        <div class="col-2 border" id="type">Prop Type</div>
-        <div class="col-2 border" id="guest">Guest</div>
-        <div class="col-4 border" id="location">Location</div>
-    </section>
+        <!-- BOOKING -->
+        <section class="row booking border">
+            <div class="col-4 border" id="checkin">CHECKIN</div>
+            <div class="col-4 border" id="checkout">CHECKOUT</div>
+            <div class="col-4 border" id="">ROOM TYPES</div>
+        </section>
 
-    <!-- MAP -->
-    <section class="row map border">
-        <div class="col border" id="map">Map</div>
-        <div class="col border" id="short">Short by</div>
-    </section>
+        <!-- FEATURES -->
+        <section class="row features border">
+            <div class="col-4 border">PriceRange</div>
+            <div class="col-2 border">PropType</div>
+            <div class="col-2 border">Guest</div>
+            <div class="col-4 border">Location</div>
+        </section>
 
-    <!-- HOTELS -->
-    <section class="row hotels border">
-        <div class="col-12 row hotel border m-0 p-0">
-            <div class="col-3 border " id="photo">Photo</div>
-            <div class="col-4 border" id="desc">Desc</div>
-            <div class="col-2 border" id="deals">Deals</div>
-            <div class="col-3 border" id="details">View details</div>
+        <!-- MAP -->
+        <section class="row map border">
+            <div class="col"></div>
+            <div class="col"></div>
+        </section>
 
-        </div>
+        <!-- HOTELS -->
+        <section class="row hotels border">
+            <!-- HOTEL -->
+            <div class="col-12 row hotel border m-0 p-0">
+                <div class="col-3 border">PHOTO</div>
+                <div class="col-4 border">DESC</div>
+                <div class="col-2 border">DEALS</div>
+                <div class="col-3 border">VIEW DEALS</div>
+            </div>
 
-    </section>
-</div>
+        </section>
+    </div>
 
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>
