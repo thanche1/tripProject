@@ -5,10 +5,21 @@ jQuery(init);
 // Our Application logic goes here:
 function init($) {
 
-    let options = {
-        url: "../data.json",
-        success: jsonHandler
-    }
+    let options = {  url: "../data.json",success: jsonHandler}
+    let entries;
+
+    
+    function removeDups(names) {
+        let unique = {
+            Paris: true,
+            Marseille: true,
+            Toulouse: true,
+        };
+        names.forEach(function (i) {
+            if (!unique[i]) { unique[i] = true; }
+        });
+        return Object.keys(unique);
+}
 
     function createOptions(listOfCities) {
 
@@ -25,7 +36,7 @@ function init($) {
     }
     function jsonHandler(data) {
 
-        let entries = data[1].entries;
+        entries = data[1].entries;
         let cities = entries.map(getCity); // Array[ { HOTEL } x 4 ]
         let uniqueCities = removeDups(cities);
         uniqueCities.sort();
@@ -36,27 +47,23 @@ function init($) {
         }
 
 
-        function removeDups(names) {
-            let unique = {
-                Paris: true,
-                Marseille: true,
-                Toulouse: true,
-            };
-            names.forEach(function (i) {
-                if (!unique[i]) { unique[i] = true; }
-            });
-            return Object.keys(unique);
-        }
+    }
+    //filtering users input and getting the right output...
+    function getHotelsFromSelected(selectedCity){
+        console.log( entries, selectedCity );
+        
+        
     }
 
     let citiesInput = document.querySelector("#cities");
     citiesInput.addEventListener("keydown", handleCityInput);
 
+
+//setting the function to react on enter key...
     function handleCityInput(e) {
         if (e.keyCode === 13) {
-            console.log("get hotels from city...")
             let selectedCity = this.value;
-            console.log("Selected City: ", selectedCity);
+            getHotelsFromSelected( selectedCity );
         }
     }
 
