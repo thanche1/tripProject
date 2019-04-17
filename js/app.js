@@ -48,17 +48,20 @@ function init($) {
 
 
     }
+
+
+
     //filtering users input and getting the right output...
     function getHotelsFromSelected( selectedCity ){
         function filterHotels( hotel ) {
             return hotel.city.toLowerCase() === selectedCity.toLowerCase().trim();
         }
         let availableHotels = entries.filter( filterHotels );
-        // return availableHotels;
-        console.log(availableHotels);
+        return availableHotels;
+      
         
     }
-
+//Handle City Input
     let citiesInput = document.querySelector("#cities");
     citiesInput.addEventListener("keydown", handleCityInput);
 
@@ -67,7 +70,32 @@ function init($) {
     function handleCityInput(e) {
         if (e.keyCode === 13) {
             let selectedCity = this.value;
-            getHotelsFromSelected( selectedCity );
+           let foundHotels = getHotelsFromSelected( selectedCity );
+           displaySelectedHotels( foundHotels );
+        }
+    }
+
+    function displaySelectedHotels( foundHotels ) {
+
+        let hotelsSection = document.querySelector( ".hotels" )
+        hotelsSection.innerHTML = ""
+        
+        //1) Loop over found hotels' list
+        //1.2) For every HOTEL object -> get Template -> clone -> update content -> append to .hotels
+        foundHotels.map( displayHotel );
+      
+
+        function displayHotel( hotel ) {
+           
+         let template = document.querySelector( "#template" );
+         let clone = template.cloneNode( true );
+         let img = clone.querySelector( ".hotel-photo" );
+         img.setAttribute( "src", hotel.thumbnail );
+            
+       
+         clone.classList.remove( "hidden" );
+         hotelsSection.appendChild( clone );
+        
         }
     }
 

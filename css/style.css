@@ -49,4 +49,8 @@ abbr,acronym { border:0;
    .hotel-photo {
        min-height: 100%;
    }
+
+   .hidden {
+       display: none;
+   }
   
