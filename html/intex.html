@@ -24,26 +24,26 @@
     <div class="container mt-5 ">
         <!-- SUCHENBAR -->
         <section class="row searchbar pt-3">
-                <div class="col">
+            <div class="col">
                 <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <span class="input-group-text bg-black border-5 ">
-                <i class="fas fa-search text-black-50"></i>
-                </span>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-black border-5 ">
+                            <i class="fas fa-search text-black-50"></i>
+                        </span>
+                    </div>
+
+                    <!-- REPLACE WITH <datalist> -->
+                    <input list="cities-list" class="form-control border" id="cities" name="cities"
+                        aria-label="Location" placeholder="koukouroukou" />
+                    <datalist id="cities-list">
+
+                    </datalist>
+                    <div class="input-group-append">
+                        <button class="bg-info text-white px-5 border-0">Search</button>
+                    </div>
                 </div>
-               
-                <!-- REPLACE WITH <datalist> -->
-                <input list="cities-list" class="form-control border" id="cities" 
-                name="cities" aria-label="Location" placeholder="koukouroukou"/>
-                <datalist id="cities-list">
-            
-                </datalist>
-                <div class="input-group-append">
-                <button class="bg-info text-white px-5 border-0">Search</button>
-                </div>
-                </div>
-                </div>
-                </section>
+            </div>
+        </section>
 
 
         <!-- BOOKING -->
@@ -66,18 +66,41 @@
             <div class="col"></div>
             <div class="col"></div>
         </section>
-
+ <!-- section.row>.col>img*3 -->
         <!-- HOTELS -->
         <section class="row hotels border">
             <!-- HOTEL -->
             <div class="col-12 row hotel border m-0 p-0">
-                <div class="col-3 border">PHOTO</div>
-                <div class="col-4 border">DESC</div>
+
+                <!-- hotel photo -->
+                <div class="col-3 border px-0">
+                        <i class="fas fa-heart position-absolute m-2"></i>
+                    <img src=" https://cdn.hotelplanner.com/Common/Images/_HotelPlanner/Home-Page/fade/sld6.jpg"
+                        class="img-fluid hotel-photo" alt ></div>
+
+                        <!-- Hotel description -->
+                <div class="col-4 border">
+                    <h5 class="p-1 m-2"><strong> Hotel Lancaster</strong></h5>
+                
+                    <p class="pb-1">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-transparent"></i>
+                        <i class="fas fa-star text-transparent"></i> Hotel
+                    </p>
+                    <p class="p-1">Paris, 0.2 miles to Champs Elysees </p>
+                    <p class="p-1"><span class="bg-success text-white p-1 rounded" >(8.8)</span><strong> Excelent</strong> (1780 reviews)</p>
+                    <p class="p-1">Excellent location(9.2/10)</p>
+
+                </div>
                 <div class="col-2 border">DEALS</div>
                 <div class="col-3 border">VIEW DEALS</div>
             </div>
-
         </section>
+
+       
+
     </div>
 
     <script src="../js/app.js"></script>

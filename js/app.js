@@ -49,9 +49,13 @@ function init($) {
 
     }
     //filtering users input and getting the right output...
-    function getHotelsFromSelected(selectedCity){
-        console.log( entries, selectedCity );
-        
+    function getHotelsFromSelected( selectedCity ){
+        function filterHotels( hotel ) {
+            return hotel.city.toLowerCase() === selectedCity.toLowerCase().trim();
+        }
+        let availableHotels = entries.filter( filterHotels );
+        // return availableHotels;
+        console.log(availableHotels);
         
     }
 
